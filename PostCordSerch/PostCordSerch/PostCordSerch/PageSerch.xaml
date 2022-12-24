@@ -4,9 +4,19 @@
              x:Class="PostCordSerch.PageSerch"
              Title="PageSerch">
     <VerticalStackLayout>
-        <Label 
-            Text="検索画面"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/><!--〒画像-->
+                <RowDefinition Height="*"/><!--郵便番号入力-->
+                <RowDefinition Height="*"/><!--検索実行ボタン-->
+                <RowDefinition Height="50"/><!--余白-->
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" BackgroundColor="LightBlue"/>
+            <Grid Grid.Row="1" BackgroundColor="LightYellow"/>
+            <Grid Grid.Row="2" BackgroundColor="LightBlue"/>
+            <Grid Grid.Row="3" BackgroundColor="LightYellow"/>
+            
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
