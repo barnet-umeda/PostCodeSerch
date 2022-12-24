@@ -16,9 +16,12 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="50"/>
         </Grid.ColumnDefinitions>
-        
-        <Grid Grid.Row="0" Grid.Column="1" BackgroundColor="LightBlue"/>
-        <Grid Grid.Row="1" Grid.Column="1" BackgroundColor="LightYellow"/>
-        <Grid Grid.Row="2" Grid.Column="1" BackgroundColor="LightBlue"/>
+
+        <Image
+            Grid.Row="0"
+            Grid.Column="1"
+            HeightRequest="200"
+            Source="post_code.png"/>
+
     </Grid>
 </ContentPage>

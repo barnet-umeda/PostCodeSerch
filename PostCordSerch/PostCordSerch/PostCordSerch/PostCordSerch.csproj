@@ -49,6 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\post_code.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="PageResult.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
