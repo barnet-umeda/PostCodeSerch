@@ -4,16 +4,17 @@
              x:Class="PostCordSerch.PageSerch"
              Title="PageSerch">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
-            <!--余白-->
             <ColumnDefinition Width="*"/>
-            <!--コントロール配置-->
             <ColumnDefinition Width="50"/>
-            <!--余白-->
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" BackgroundColor="LightBlue"/>
-        <Grid Grid.Column="1" BackgroundColor="LightYellow"/>
-        <Grid Grid.Column="2" BackgroundColor="LightBlue"/>
     </Grid>
 </ContentPage>
