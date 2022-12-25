@@ -44,7 +44,8 @@
             Text="検索"
             FontSize="40"
             BackgroundColor="DarkBlue"
-            x:Name="ButtonSerch"/>
+            x:Name="ButtonSerch"
+            Clicked="ClickedButtonSerch"/>
 
     </Grid>
 </ContentPage>
