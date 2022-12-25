@@ -35,6 +35,16 @@
             Keyboard="Numeric"
             MaxLength="8"
             x:Name="EntryPostCode"/>
-        
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Text="検索"
+            FontSize="40"
+            BackgroundColor="DarkBlue"
+            x:Name="ButtonSerch"/>
+
     </Grid>
 </ContentPage>
