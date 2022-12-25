@@ -10,6 +10,7 @@ public partial class PageSerch : ContentPage
 		InitializeComponent();
 	}
 
+    //検索ボタンクリックイベント
     private async void ClickedButtonSerch(object sender, EventArgs e)
     {
         if (EntryPostCode.Text == null || EntryPostCode.Text.Length < 7)
@@ -18,31 +19,34 @@ public partial class PageSerch : ContentPage
             return;
         }
 
-        HttpClient client = new HttpClient();
-        JsonNode PostInfo;  //Httpレスポンス
-
-        string ApiAddress = $"https://zipcloud.ibsnet.co.jp/api/search?zipcode={EntryPostCode.Text}";
-
         try
         {
-            client.Timeout = TimeSpan.FromSeconds(5); //タイムアウトを5秒に設定
+            //APIアドレス＋郵便番号
+            string ApiAddress = $"https://zipcloud.ibsnet.co.jp/api/search?zipcode={EntryPostCode.Text}";
+            //APIアクセス先
+            HttpClient client = new HttpClient();
+            //タイムアウトを5秒に設定
+            client.Timeout = TimeSpan.FromSeconds(5);
+            //usingステートメントを使用してアクセスを宣言(動作終了後、自動破棄となる)
             using HttpResponseMessage response = await client.GetAsync(ApiAddress);
             response.EnsureSuccessStatusCode();
+            //APIからのレスポンスを格納
             string responseBody = await response.Content.ReadAsStringAsync();
+            //VisualStudioの出力にレスポンスを表示
+            Console.WriteLine(responseBody);
 
-            PostInfo = JsonNode.Parse(responseBody);
-            Console.WriteLine(PostInfo);
-
-            if (PostInfo["results"] == null) throw new Exception("error");
-
-            JsonNode jnBuf = PostInfo["results"];
-            JsonArray jaBuf = (JsonArray)PostInfo["results"];
-            JsonValue jvBuf = (JsonValue)jaBuf[0]["address1"];
-
-            await DisplayAlert("", jvBuf.ToString(), "OK");
+            //レスポンスをJsonNodeに変換(JsonNodeで結果表示画面に渡す)
+            JsonNode jnodeResponseBody = JsonNode.Parse(responseBody);
+            //レスポンスに住所データが無い場合
+            if (jnodeResponseBody["results"] == null || (int)jnodeResponseBody["status"] != 200)
+            {
+                //エラーを発生させる。
+                throw new Exception("error");
+            }
         }
         catch
         {
+            //エラーメッセージ表示
             await DisplayAlert("", "取得に失敗しました", "OK");
         }
     }
