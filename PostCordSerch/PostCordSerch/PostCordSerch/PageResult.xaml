@@ -7,17 +7,71 @@
         RowDefinitions="*, 2*, *, *, 10"
         ColumnDefinitions="50, *, 50">
 
+        <Label
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            FontSize="40"
+            Text="検索結果"/>
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            FontSize="30"
+            Text="戻る"
+            Clicked="ClickedResult"/>
+
         <Grid 
             Grid.Row="1"
             Grid.Column="1"
             RowDefinitions="*, *, *"
             ColumnDefinitions="*, 2*">
             
-            <!--ここにレスポンスのラベルを配置-->
-            <Grid Grid.Row="0" Grid.Column="0" BackgroundColor="LightPink"/>
-            <Grid Grid.Row="1" Grid.Column="0" BackgroundColor="LightGreen"/>
-            <Grid Grid.Row="2" Grid.Column="0" BackgroundColor="LightPink"/>
-            
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Text="郵便番号："/>
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Text="住所："/>
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                FontSize="12"
+                Text="都道府県コード："/>
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                x:Name="LabelPostCode"
+                Text="-----"/>
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                x:Name="LabelAddress"
+                Text="-----"/>
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                x:Name="LabelPrefectureCode"
+                Text="-----"/>
+
         </Grid>
 
     </Grid>
