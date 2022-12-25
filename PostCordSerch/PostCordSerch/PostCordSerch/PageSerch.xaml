@@ -23,5 +23,18 @@
             HeightRequest="200"
             Source="post_code.png"/>
 
+        <Entry
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            BackgroundColor="LightGray"
+            Placeholder="郵便番号    "
+            PlaceholderColor="DimGray"
+            FontSize="40"
+            Keyboard="Numeric"
+            MaxLength="8"
+            x:Name="EntryPostCode"/>
+        
     </Grid>
 </ContentPage>
