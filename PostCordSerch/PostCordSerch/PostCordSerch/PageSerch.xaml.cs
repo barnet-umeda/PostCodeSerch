@@ -37,12 +37,16 @@ public partial class PageSerch : ContentPage
 
             //レスポンスをJsonNodeに変換(JsonNodeで結果表示画面に渡す)
             JsonNode jnodeResponseBody = JsonNode.Parse(responseBody);
+
             //レスポンスに住所データが無い場合
             if (jnodeResponseBody["results"] == null || (int)jnodeResponseBody["status"] != 200)
             {
                 //エラーを発生させる。
                 throw new Exception("error");
             }
+
+            //★ここに結果表示画面を呼び出す処理が必要
+
         }
         catch
         {

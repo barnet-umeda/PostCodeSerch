@@ -8,7 +8,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:PageSerch}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:PageResult}"
+        Route="PageResult" />
 
 </Shell>
