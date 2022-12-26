@@ -46,6 +46,7 @@ public partial class PageSerch : ContentPage
             }
 
             //★ここに結果表示画面を呼び出す処理が必要
+            await Navigation.PushAsync(new PageResult(jnodeResponseBody));
 
         }
         catch
